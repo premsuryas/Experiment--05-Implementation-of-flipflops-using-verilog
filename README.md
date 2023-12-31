@@ -109,32 +109,85 @@ Q(t+1)=T′Q(t)+TQ(t)′
 ### PROGRAM 
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: PREM KUMAR
+RegisterNumber:23013598  
 */
+### SR FLIP FLOP:
+```
+module srf(s,r,clk,q,qbar);
+input s,r,clk;
+output reg q;
+output qbar;
+always@(posedge clk)
+begin
+q= s|((~r)&q);
+end
+assign qbar=~q;
+endmodule
 
+```
+### D FLIP FLOP:
+```
+module Df(d,clk,q,qbar);
+input d,clk;
+output reg q;
+output qbar;
+always@(posedge clk)
+begin
+q=d;
+end
+assign qbar=~q;
+endmodule
 
+```
+### JK FILP FLOP:
+```
+module jk(j,k,clk,q,qbar);
+input j,k,clk;
+output q,qbar;
+reg q,qbar;
+always @(posedge clk)
+begin
+q<=(j&~q)|(~k&q);
+qbar<=~q;
+end
+endmodule
 
+```
+### T FILP FLOP:
+```
+module t(t,clk,q,qbar);
+input t,clk;
+output reg q;
+output qbar;
+always@(posedge clk)
+begin
+q=((~q)&t)|(q&(~t));
+end
+assign qbar=~q;
+endmodule
 
+```
+### RTL LOGIC FOR FLIPFLOPS :
+![output](![sr filp flop RTL](https://github.com/premsuryas/Experiment--05-Implementation-of-flipflops-using-verilog/assets/147473858/8f31c1e2-d2c5-42a0-ac05-9be17aa36d8d)
+)
+![output](![dD FILP FLOP RTL](https://github.com/premsuryas/Experiment--05-Implementation-of-flipflops-using-verilog/assets/147473858/294255a0-f7d5-4067-9cba-6ed5b59c8d80)
+)
+![output](![JK](https://github.com/premsuryas/Experiment--05-Implementation-of-flipflops-using-verilog/assets/147473858/7a77a175-6ab3-43a9-9c39-50e3a01f2a59)
+)
+![output](![T FILP FLOP RTL](https://github.com/premsuryas/Experiment--05-Implementation-of-flipflops-using-verilog/assets/147473858/a9cac589-dce9-45e4-a55f-d5c6d83f95dd)
+)
 
+### TIMING DIGRAMS FOR FLIP FLOPS :
+![output](![sr filp flop timing diagram](https://github.com/premsuryas/Experiment--05-Implementation-of-flipflops-using-verilog/assets/147473858/bb77ec0c-ff38-4ef7-aa72-444b43cca5bb)
+)
+![output](![D FILP FLOP RTL OUTPUT](https://github.com/premsuryas/Experiment--05-Implementation-of-flipflops-using-verilog/assets/147473858/95841486-4ee6-4c45-bc93-8a4892fdefe8)
+)
+![output](![JK TIMING DIAGRAM](https://github.com/premsuryas/Experiment--05-Implementation-of-flipflops-using-verilog/assets/147473858/b39c1fc7-6281-4b9e-b83e-0567a8349f86)
+)
+![output](![T FILP FLOP TIMING DIAGRAM (2)](https://github.com/premsuryas/Experiment--05-Implementation-of-flipflops-using-verilog/assets/147473858/79a83936-905b-47aa-86b5-763859619a12)
+)
 
-### RTL LOGIC FOR FLIPFLOPS 
+### RESULTS :
+WHEN THE FILP FLOP WAS CREATED SUCESSFULLY
 
-
-
-
-
-
-
-
-
-### TIMING DIGRAMS FOR FLIP FLOPS 
-
-
-
-
-
-
-
-
-### RESULTS 
